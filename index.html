@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehliyet Zeka - Gizlilik Politikası ve Pass Guarantee Şartları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0A0F1D;
+            --card-bg: #141C32;
+            --blue: #0066FF;
+            --text: #FFFFFF;
+            --muted: #A0AEC0;
+            --border: rgba(255,255,255,0.07);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, sans-serif;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container { width: 100%; max-width: 800px; padding: 48px 24px 80px; }
+
+        /* HEADER */
+        .brand-header { text-align: center; margin-bottom: 56px; }
+        .logo-container { display: inline-flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 12px; }
+        .ez-logo {
+            width: 52px; height: 52px;
+            border: 3px solid var(--blue);
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 20px; color: var(--text);
+            box-shadow: 0 0 18px rgba(0,102,255,0.25);
+        }
+        .brand-name { font-size: 26px; font-weight: 500; letter-spacing: -0.5px; }
+        .brand-name span { color: var(--blue); font-weight: 800; }
+        .brand-sub { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
+        /* SECTION */
+        h1 { font-size: 28px; font-weight: 700; color: var(--blue); text-align: center; margin-bottom: 8px; }
+        .update-date { text-align: center; color: var(--muted); font-size: 14px; margin-bottom: 40px; }
+        h2 {
+            font-size: 20px; font-weight: 700; color: var(--blue);
+            margin: 44px 0 16px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        h2::before { content: "•"; font-size: 28px; line-height: 1; }
+
+        p { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
+        ul { padding-left: 20px; margin-bottom: 14px; }
+        li { color: var(--muted); font-size: 15px; margin-bottom: 10px; }
+        strong { color: var(--text); }
+        a { color: var(--blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* PREMIUM CARD */
+        .premium-card {
+            background: var(--card-bg);
+            border-left: 4px solid var(--blue);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 32px 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
+        .premium-card h2 { margin-top: 0; }
+
+        /* CONDITION ITEMS */
+        .condition {
+            background: rgba(0,102,255,0.07);
+            border: 1px solid rgba(0,102,255,0.18);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+        }
+        .condition strong { color: var(--blue); display: block; margin-bottom: 4px; font-size: 14px; }
+        .condition span { color: var(--muted); font-size: 14px; }
+
+        /* STEPS */
+        .step { display: flex; gap: 14px; margin-bottom: 12px; align-items: flex-start; }
+        .step-num {
+            width: 28px; height: 28px; min-width: 28px;
+            background: var(--blue); border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700; color: white;
+        }
+        .step p { margin: 0; font-size: 14px; padding-top: 4px; }
+
+        /* WARNING */
+        .warning {
+            background: rgba(255,176,32,0.08);
+            border: 1px solid rgba(255,176,32,0.25);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 16px;
+            color: #FFB020;
+            font-size: 14px;
+        }
+
+        /* DIVIDER */
+        hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+        /* CONTACT */
+        .contact-card {
+            background: var(--card-bg);
+            border-left: 4px solid var(--blue);
+            border-radius: 12px;
+            padding: 28px 32px;
+            text-align: center;
+            margin-top: 48px;
+        }
+        .contact-card h2 { justify-content: center; margin-top: 0; }
+        .contact-btn {
+            display: inline-block;
+            background: var(--blue);
+            color: white;
+            font-size: 15px; font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 12px;
+            transition: opacity 0.2s;
+        }
+        .contact-btn:hover { opacity: 0.85; text-decoration: none; }
+
+        footer {
+            text-align: center;
+            margin-top: 56px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .premium-card { padding: 22px 18px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header class="brand-header">
+        <div class="logo-container">
+            <div class="ez-logo">EZ</div>
+            <div class="brand-name">ehliyet<span>zeka</span></div>
+        </div>
+        <div class="brand-sub">Yapay Zeka Destekli Ehliyet Sınav Hazırlığı</div>
+    </header>
+
+    <main>
+        <h1>Gizlilik Politikası ve Kullanım Şartları</h1>
+        <p class="update-date">Son güncelleme: Haziran 2026</p>
+
+        <!-- GİZLİLİK -->
+        <section>
+            <h2>1. Gizlilik Politikası</h2>
+            <p>Bu uygulama, <strong>Osman Gündüzalp</strong> tarafından işletilen Ehliyet Zeka uygulamasına aittir. Kullanıcı verileriniz yalnızca hizmet kalitesini artırmak ve kişiselleştirilmiş öğrenme deneyimi sunmak amacıyla işlenmektedir.</p>
+
+            <h2>Toplanan Veriler</h2>
+            <ul>
+                <li><strong>Hesap bilgileri:</strong> E-posta adresi (kayıt sırasında)</li>
+                <li><strong>Kullanım verileri:</strong> Çözülen sorular, doğru/yanlış oranları, sınav sonuçları, streak bilgisi</li>
+                <li><strong>Sınav tarihi:</strong> Kişiselleştirilmiş AI planı üretmek için</li>
+                <li><strong>Satın alma durumu:</strong> Premium üyelik bilgisi (RevenueCat — kart bilgileri tarafımızca saklanmaz)</li>
+                <li><strong>Cihaz bilgisi:</strong> İşletim sistemi ve uygulama versiyonu (hata takibi)</li>
+            </ul>
+
+            <h2>Üçüncü Taraf Hizmetler</h2>
+            <ul>
+                <li><strong>Supabase:</strong> Veritabanı ve kimlik doğrulama (AB sunucuları, GDPR uyumlu)</li>
+                <li><strong>Anthropic Claude API:</strong> Yapay zeka açıklamaları (sorular anonim işlenir)</li>
+                <li><strong>RevenueCat:</strong> Uygulama içi satın alma yönetimi</li>
+                <li><strong>Google AdMob:</strong> Reklam gösterimi (yalnızca ücretsiz kullanıcılara)</li>
+            </ul>
+
+            <h2>Veri Güvenliği</h2>
+            <ul>
+                <li>Tüm veriler HTTPS/TLS ile şifreli iletilir</li>
+                <li>Şifreler düz metin olarak hiçbir zaman saklanmaz</li>
+                <li>Ödeme bilgileri tarafımızca işlenmez</li>
+                <li>Supabase Row Level Security (RLS) ile her kullanıcı yalnızca kendi verisine erişir</li>
+            </ul>
+
+            <h2>KVKK Haklarınız</h2>
+            <p>6698 sayılı Kanun kapsamında verilerinize erişme, düzeltme, silme ve işlemeye itiraz etme hakkına sahipsiniz. Hesap silme talebi için <a href="mailto:ehliyetzeka@gmail.com">ehliyetzeka@gmail.com</a> adresine e-posta gönderin — verileriniz 30 gün içinde silinir.</p>
+        </section>
+
+        <hr>
+
+        <!-- PASS GUARANTEE -->
+        <section>
+            <div class="premium-card">
+                <h2>2. Pass Guarantee — Para İade Şartları</h2>
+                <p>Ehliyet Zeka, yapay zeka destekli eğitim modeline güveniyor. <strong>139 TL'lik 90 günlük "Sınava Kadar Full" paketini</strong> alan ve aşağıdaki tüm şartları eksiksiz yerine getiren kullanıcılar, resmi MEB sınavından başarısız olmaları durumunda <strong>139 TL'nin tamamını</strong> iade alır.</p>
+
+                <p style="margin-top:20px; margin-bottom:12px; color: var(--text); font-weight:600;">İade Hak Kazanma Şartları (tümü sağlanmalı):</p>
+
+                <div class="condition">
+                    <strong>Şart 1 — Paket</strong>
+                    <span>Yalnızca 139 TL / 90 günlük "Sınava Kadar Full" paketi kapsam dahilindedir.</span>
+                </div>
+                <div class="condition">
+                    <strong>Şart 2 — Erken Başlangıç</strong>
+                    <span>Sınav tarihine en az 14 gün kala uygulamaya kayıt olunmuş olmalıdır.</span>
+                </div>
+                <div class="condition">
+                    <strong>Şart 3 — Kapsama</strong>
+                    <span>Uygulamadaki toplam soru havuzunun en az %80'i çözülmüş olmalıdır.</span>
+                </div>
+                <div class="condition">
+                    <strong>Şart 4 — Deneme Sınavları</strong>
+                    <span>En az 5 tam deneme sınavı eksiksiz tamamlanmış olmalıdır.</span>
+                </div>
+                <div class="condition">
+                    <strong>Şart 5 — Başarı Ortalaması</strong>
+                    <span>Son 3 deneme sınavının ortalaması en az %75 olmalıdır.</span>
+                </div>
+
+                <p style="margin-top:24px; margin-bottom:12px; color: var(--text); font-weight:600;">Başvuru Süreci:</p>
+
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <p>Uygulama içinden tüm şartları tamamla — Pass Guarantee durumunu profilden takip edebilirsin.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <p>Resmi MEB e-sınavına gir (sınav.meb.gov.tr).</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <p>Başarısız olursan e-devlet onaylı sınav sonuç belgesini <a href="mailto:ehliyetzeka@gmail.com">ehliyetzeka@gmail.com</a> adresine gönder.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <p>Ekibimiz 48 saat içinde inceler — şartlar sağlanmışsa <strong>139 TL</strong> orijinal ödeme yöntemine iade edilir.</p>
+                </div>
+
+                <div class="warning">
+                    ⚠️ Her kullanıcı için yalnızca 1 iade hakkı geçerlidir. Haftalık ve aylık paketler kapsam dışıdır.
+                </div>
+            </div>
+        </section>
+
+        <!-- İLETİŞİM -->
+        <div class="contact-card">
+            <h2>İletişim</h2>
+            <p style="color: var(--muted); font-size:15px;">Gizlilik, iade veya uygulama hakkında her konuda bize ulaşabilirsiniz.</p>
+            <a href="mailto:ehliyetzeka@gmail.com" class="contact-btn">ehliyetzeka@gmail.com</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Ehliyet Zeka — Osman Gündüzalp &nbsp;|&nbsp; <a href="mailto:ehliyetzeka@gmail.com">ehliyetzeka@gmail.com</a></p>
+    </footer>
+
+</div>
+</body>
+</html>
