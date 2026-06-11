@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hesap Silme | Ehliyet Zeka</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0A0A0F;
+      color: #FFFFFF;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: #1A1A27;
+      border-radius: 20px;
+      padding: 40px 32px;
+      max-width: 560px;
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: #0066FF;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #FF4D6A;
+      margin-bottom: 8px;
+    }
+    .lang-badge {
+      display: inline-block;
+      background: rgba(0,102,255,0.15);
+      color: #0066FF;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .section { margin-bottom: 28px; }
+    h2 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #8A8A9A;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(0,102,255,0.18);
+      color: #0066FF;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.5;
+    }
+    .step strong { color: #FFFFFF; }
+    .alt-method {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .alt-method p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+    .alt-method a {
+      color: #0066FF;
+      text-decoration: none;
+    }
+    .alt-method a:hover { text-decoration: underline; }
+    .warning {
+      background: rgba(255,77,106,0.08);
+      border: 1px solid rgba(255,77,106,0.25);
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+      margin-top: 20px;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin: 28px 0;
+    }
+    /* English section */
+    .en h1 { font-size: 18px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <div class="logo-icon">🚗</div>
+      <div class="logo-text">Ehliyet Zeka</div>
+    </div>
+
+    <!-- TÜRKÇE -->
+    <span class="lang-badge">🇹🇷 Türkçe</span>
+    <h1>Hesap Silme</h1>
+
+    <div class="section">
+      <h2>Uygulama Üzerinden</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Uygulamayı aç ve <strong>Profil</strong> sekmesine git.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>Sayfanın en altına kadar kaydır, <strong>"Hesabı Sil"</strong> butonuna dokun.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>Onay ekranında <strong>"Evet, Hesabımı Sil"</strong> seçeneğini onayla.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p>Hesabın, tüm ilerleme verilerin ve AI geçmişin <strong>kalıcı olarak silinir.</strong></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>E-posta ile Talep</h2>
+      <div class="alt-method">
+        <p>
+          Uygulamaya erişemiyorsan<br>
+          <a href="mailto:ehliyetzeka@gmail.com?subject=Hesap%20Silme%20Talebi">ehliyetzeka@gmail.com</a>
+          adresine <strong>"Hesap Silme Talebi"</strong> konusuyla e-posta gönder.
+          Kayıtlı e-posta adresinden gönderilen talepler <strong>48 saat</strong> içinde işlenir.
+        </p>
+      </div>
+    </div>
+
+    <div class="warning">
+      ⚠️ Hesap silme işlemi geri alınamaz. Aktif aboneliğin varsa önce
+      App Store veya Google Play'den iptal etmeyi unutma — abonelik otomatik iptal olmaz.
+    </div>
+
+    <hr class="divider">
+
+    <!-- ENGLISH -->
+    <div class="en">
+      <span class="lang-badge">🇬🇧 English</span>
+      <h1>Account Deletion</h1>
+
+      <div class="section">
+        <h2>Via the App</h2>
+        <div class="step">
+          <div class="step-num">1</div>
+          <p>Open the app and navigate to the <strong>Profile</strong> tab.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <p>Scroll to the bottom and tap <strong>"Delete Account"</strong>.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <p>Confirm by tapping <strong>"Yes, Delete My Account"</strong> in the dialog.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <p>Your account, all progress data and AI history will be <strong>permanently deleted.</strong></p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Request via Email</h2>
+        <div class="alt-method">
+          <p>
+            If you cannot access the app, send an email to<br>
+            <a href="mailto:ehliyetzeka@gmail.com?subject=Account%20Deletion%20Request">ehliyetzeka@gmail.com</a>
+            with subject <strong>"Account Deletion Request"</strong>.
+            Requests sent from the registered email address are processed within <strong>48 hours</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="warning">
+        ⚠️ Account deletion is permanent and cannot be undone. If you have an active subscription,
+        cancel it in the App Store or Google Play first — deleting the account does not cancel the subscription automatically.
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
