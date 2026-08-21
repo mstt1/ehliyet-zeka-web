@@ -3,326 +3,362 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pass Guarantee Şartları | Ehliyet Zeka</title>
+  <title>Geçme Garantisi Şartları | Ehliyet Zeka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0A0A0F;
-      color: #FFFFFF;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+    :root{
+      --bg:#0A0A0F;
+      --card:#14141C;
+      --line:rgba(255,255,255,.07);
+      --text:#FFFFFF;
+      --body:rgba(255,255,255,.82);
+      --muted:#8A8A9A;
+      --blue:#0066FF;
+      --green:#00D68F;
+      --amber:#FFB020;
     }
-    .card {
-      background: #1A1A27;
-      border-radius: 20px;
-      padding: 40px 32px;
-      max-width: 560px;
-      width: 100%;
-      border: 1px solid rgba(255,255,255,0.06);
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:32px 20px 64px;
+      -webkit-font-smoothing:antialiased;
     }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 32px;
+    .card{
+      background:var(--card);
+      border-radius:20px;
+      padding:36px 30px;
+      max-width:600px;
+      width:100%;
+      border:1px solid var(--line);
     }
-    .logo-icon {
-      width: 44px;
-      height: 44px;
-      background: #0066FF;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
+    .logo{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
+    .logo-mark{width:44px;height:44px;flex-shrink:0;}
+    .logo-text{font-size:19px;font-weight:800;letter-spacing:-.02em;}
+    .lang-badge{
+      display:inline-block;background:rgba(0,102,255,.15);color:var(--blue);
+      border-radius:6px;padding:3px 9px;font-size:11px;font-weight:700;margin-bottom:14px;
     }
-    .logo-text {
-      font-size: 20px;
-      font-weight: 700;
-      color: #FFFFFF;
+    h1{font-size:23px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;}
+    .subtitle{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:22px;}
+    .scope-alert{
+      background:rgba(255,176,32,.07);
+      border:1px solid rgba(255,176,32,.28);
+      border-left:3px solid var(--amber);
+      border-radius:12px;padding:15px 16px;margin-bottom:26px;
     }
-    h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #00C896;
-      margin-bottom: 8px;
+    .scope-alert .t{
+      display:block;font-size:13.5px;font-weight:800;color:var(--amber);margin-bottom:6px;
     }
-    .lang-badge {
-      display: inline-block;
-      background: rgba(0,102,255,0.15);
-      color: #0066FF;
-      border-radius: 6px;
-      padding: 2px 8px;
-      font-size: 11px;
-      font-weight: 600;
-      margin-bottom: 20px;
+    .scope-alert p{font-size:13.5px;color:var(--body);line-height:1.6;}
+    .section{margin-bottom:26px;}
+    h2{
+      font-size:12.5px;font-weight:700;color:var(--muted);
+      text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;
     }
-    .subtitle {
-      font-size: 13px;
-      color: #8A8A9A;
-      line-height: 1.5;
-      margin-bottom: 24px;
+    .step{display:flex;align-items:flex-start;gap:13px;margin-bottom:17px;}
+    .step-num{
+      width:25px;height:25px;border-radius:50%;
+      background:rgba(0,102,255,.18);color:var(--blue);
+      font-size:12px;font-weight:800;
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;margin-top:1px;
     }
-    .section { margin-bottom: 28px; }
-    h2 {
-      font-size: 15px;
-      font-weight: 600;
-      color: #8A8A9A;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
+    .step-body{flex:1;}
+    .step p{font-size:14px;color:var(--body);line-height:1.6;}
+    .step strong{color:var(--text);font-weight:700;}
+    .note{display:block;margin-top:7px;font-size:12.5px;color:var(--muted);line-height:1.55;}
+    .cond-list{list-style:none;margin-top:10px;}
+    .cond-list li{
+      font-size:13.5px;color:var(--body);line-height:1.55;
+      padding:7px 0 7px 22px;position:relative;
     }
-    .step {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 16px;
+    .cond-list li::before{
+      content:"";position:absolute;left:4px;top:14px;
+      width:6px;height:6px;border-radius:50%;background:var(--blue);
     }
-    .step-num {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: rgba(0,102,255,0.18);
-      color: #0066FF;
-      font-size: 12px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
+    .cond-list li strong{color:var(--text);}
+    .choice-box{
+      background:rgba(0,214,143,.06);
+      border:1px solid rgba(0,214,143,.22);
+      border-radius:10px;padding:13px 15px;margin-top:10px;
     }
-    .step p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
+    .choice-box p{font-size:13.5px;color:var(--body);line-height:1.6;}
+    .choice-box p+p{margin-top:8px;}
+    .choice-box strong{color:var(--green);}
+    .excl{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:12px;padding:6px 16px;
     }
-    .step strong { color: #FFFFFF; }
-    .step .note {
-      display: block;
-      margin-top: 6px;
-      font-size: 12.5px;
-      color: #8A8A9A;
+    .excl ul{list-style:none;}
+    .excl li{
+      font-size:13.5px;color:var(--body);line-height:1.55;
+      padding:9px 0 9px 20px;position:relative;
+      border-bottom:1px solid rgba(255,255,255,.045);
     }
-    .choice-box {
-      background: rgba(0,200,150,0.06);
-      border: 1px solid rgba(0,200,150,0.2);
-      border-radius: 10px;
-      padding: 12px 14px;
-      margin-top: 8px;
+    .excl li:last-child{border-bottom:none;}
+    .excl li::before{
+      content:"×";position:absolute;left:2px;top:8px;
+      color:#FF4D6A;font-weight:800;font-size:14px;
     }
-    .choice-box p {
-      font-size: 13.5px;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.6;
+    .excl li strong{color:var(--text);}
+    a{color:var(--blue);text-decoration:none;font-weight:600;}
+    a:hover{text-decoration:underline;}
+    .warning{
+      background:rgba(255,77,106,.07);
+      border:1px solid rgba(255,77,106,.22);
+      border-radius:10px;padding:14px 15px;
+      font-size:13px;color:var(--body);line-height:1.6;margin-top:20px;
     }
-    .choice-box p + p { margin-top: 6px; }
-    .alt-method {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 16px;
+    .divider{border:none;border-top:1px solid var(--line);margin:32px 0;}
+    .updated{
+      margin-top:26px;padding-top:16px;border-top:1px solid var(--line);
+      font-size:12px;color:var(--muted);
     }
-    .alt-method p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.6;
+    @media (max-width:480px){
+      .card{padding:28px 20px;border-radius:16px;}
+      h1{font-size:20px;}
     }
-    .alt-method a {
-      color: #0066FF;
-      text-decoration: none;
-    }
-    .alt-method a:hover { text-decoration: underline; }
-    .warning {
-      background: rgba(255,77,106,0.08);
-      border: 1px solid rgba(255,77,106,0.25);
-      border-radius: 10px;
-      padding: 14px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.5;
-      margin-top: 20px;
-    }
-    .divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      margin: 28px 0;
-    }
-    /* English section */
-    .en h1 { font-size: 18px; }
   </style>
 </head>
 <body>
   <div class="card">
+
     <div class="logo">
-      <div class="logo-icon">🚗</div>
+      <!-- Neden: emoji yerine gerçek marka amblemi — Z + kesikli şerit, mühürlenen ikon ile aynı -->
+      <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Ehliyet Zeka">
+        <rect width="100" height="100" rx="22" fill="#0A0A0F"/>
+        <path d="M28 30 L74 30 L30 70 L72 70" fill="none" stroke="#0066FF"
+              stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M68 35 L60 42 M54 47 L46 54 M40 59 L34 65" stroke="#FFFFFF"
+              stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
       <div class="logo-text">Ehliyet Zeka</div>
     </div>
 
-    <!-- TÜRKÇE -->
+    <!-- ══════════ TÜRKÇE ══════════ -->
     <span class="lang-badge">🇹🇷 Türkçe</span>
-    <h1>Pass Guarantee Şartları</h1>
+    <h1>Geçme Garantisi Şartları</h1>
     <p class="subtitle">
-      Sınavı geçemezsen ücret iadesi veya ücretsiz uzatma alırsın. Şartlar aşağıda, saklı hiçbir madde yok.
+      Şartları tamamladığın hâlde sınavı geçemezsen ücret iadesi veya ücretsiz uzatma alırsın.
+      Koşulların tamamı aşağıda — saklı madde yok.
     </p>
+
+    <div class="scope-alert">
+      <span class="t">Bu garanti yalnızca teorik e-sınav içindir</span>
+      <p>
+        Garanti, MEB tarafından yapılan <strong>sürücü kursu teorik e-sınavını</strong> kapsar.
+        <strong>Direksiyon (uygulama) sınavı kapsam dışıdır.</strong> Uygulamamız yalnızca teorik
+        sınav hazırlığı sunar; direksiyon eğitimi ve sınavı sürücü kursunun sorumluluğundadır.
+      </p>
+    </div>
 
     <div class="section">
       <div class="step">
         <div class="step-num">1</div>
-        <p>
-          <strong>Kapsam:</strong> Bu garanti yalnızca <strong>"Sınava Kadar Full"</strong> paketini
-          (149 TL / lansman kampanyasında 99 TL) satın alan kullanıcıları kapsar.
-          Haftalık (79 TL) ve Aylık (129 TL) paketler bu garantiye dahil değildir.
-        </p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <p>
-          <strong>Koşullar:</strong> Garantinin aktifleşmesi için en az <strong>5 tam deneme sınavı</strong>
-          tamamlanmış ve son 3 deneme sınavı ortalamanın <strong>%75 veya üzeri</strong> olması gerekir.
-          <span class="note">Uygulama içindeki Pass Guarantee ekranında tüm aktiflik şartları (paket türü,
-          sınav tarihine kalan gün, soru havuzu kapsamı dahil) canlı ilerleme çubuklarıyla gösterilir —
-          garanti yalnızca ekrandaki tüm şartlar tamamlandığında aktifleşir.</span>
-        </p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <p>
-          <strong>Kanıt:</strong> Gerçek MEB e-sınavına girip <strong>"GEÇEMEDİ"</strong> sonucunu gösteren
-          resmi sınav sonuç belgesi.
-        </p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <p><strong>Seçim Hakkı:</strong> Şartları sağlayıp sınavı geçemeyen kullanıcı aşağıdaki
-          iki seçenekten birini seçer:</p>
-        <div class="choice-box">
-          <p><strong>a) Ücret iadesi</strong> — ödediğin tutar, satın alma yaptığın kanal
-            (App Store veya Google Play) üzerinden iade edilir.</p>
-          <p><strong>b) Ücretsiz uzatma</strong> — bir sonraki sınav hakkına kadar
-            Full erişimin ücretsiz devam eder.</p>
+        <div class="step-body">
+          <p>
+            <strong>Kapsam:</strong> Garanti yalnızca <strong>"Sınava Kadar Full"</strong> paketini
+            satın alan kullanıcıları kapsar. Haftalık ve Aylık paketler dahil değildir.
+          </p>
         </div>
       </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <p><strong>Aktifleşme koşulları:</strong> Aşağıdaki beş şartın <strong>tamamı</strong>
+            sağlanmalıdır:</p>
+          <ul class="cond-list">
+            <li><strong>Sınava Kadar Full</strong> paketine sahip olmak</li>
+            <li>Sınav tarihine <strong>en az 14 gün</strong> kala çalışmaya başlamak</li>
+            <li>Soru havuzunun <strong>en az %80'ini</strong> çözmek</li>
+            <li><strong>En az 5 tam deneme sınavı</strong> tamamlamak</li>
+            <li>Son 3 deneme ortalamasının <strong>%70 veya üzeri</strong> olması</li>
+          </ul>
+          <span class="note">
+            Uygulama içindeki Garanti Paneli'nde her şartın ilerlemesi canlı gösterilir.
+            Garanti, ekrandaki tüm şartlar tamamlandığında aktifleşir.
+          </span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <p>
+            <strong>Kanıt:</strong> Gerçek MEB teorik e-sınavına girip <strong>başarısız</strong>
+            olduğunu gösteren resmî sınav sonuç belgesi.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <p><strong>Seçim hakkı:</strong> Şartları sağlayıp geçemeyen kullanıcı iki seçenekten
+            <strong>birini</strong> seçer:</p>
+          <div class="choice-box">
+            <p><strong>a) Ücret iadesi</strong> — ödediğin tutar, satın alma yaptığın kanal
+              (Google Play veya App Store) üzerinden iade edilir.</p>
+            <p><strong>b) Ücretsiz uzatma</strong> — bir sonraki sınav hakkına kadar Full
+              erişimin ücretsiz devam eder.</p>
+          </div>
+        </div>
+      </div>
+
       <div class="step">
         <div class="step-num">5</div>
-        <p>
-          <strong>Başvuru süresi:</strong> Sonuç belgesini aldığın tarihten itibaren
-          <strong>30 gün içinde</strong>
-          <a href="mailto:ehliyetzeka@gmail.com?subject=Pass%20Guarantee%20Basvurusu" style="color:#0066FF;">ehliyetzeka@gmail.com</a>
-          adresine göndermelisin.
-        </p>
-      </div>
-      <div class="step">
-        <div class="step-num">6</div>
-        <p>
-          <strong>İstisna:</strong> Şartları sağlasa bile gerçek sınava hiç girmeyen kullanıcılar
-          bu garantinin kapsamı dışındadır — garanti yalnızca sınava girip başarısız olma durumunu kapsar.
-        </p>
+        <div class="step-body">
+          <p>
+            <strong>Başvuru süresi:</strong> Sonuç belgesinin tarihinden itibaren
+            <strong>30 gün içinde</strong>
+            <a href="mailto:ehliyetzeka@gmail.com?subject=Gecme%20Garantisi%20Basvurusu">ehliyetzeka@gmail.com</a>
+            adresine başvurmalısın. Belgeyi gönderirken tercihini de belirt: iade mi, uzatma mı?
+          </p>
+        </div>
       </div>
     </div>
 
     <div class="section">
-      <h2>Başvuru</h2>
-      <div class="alt-method">
-        <p>
-          Sonuç belgeni <strong>"Pass Guarantee Başvurusu"</strong> konusuyla
-          <a href="mailto:ehliyetzeka@gmail.com?subject=Pass%20Guarantee%20Basvurusu">ehliyetzeka@gmail.com</a>
-          adresine gönder. Ekibimiz inceler ve seçtiğin seçeneğe göre işlem yapar.
-        </p>
+      <h2>Kapsam dışı durumlar</h2>
+      <div class="excl">
+        <ul>
+          <li><strong>Direksiyon (uygulama) sınavı</strong> — garanti yalnızca teorik e-sınavı kapsar.</li>
+          <li><strong>Sınava girmemek</strong> — şartları sağlasan bile gerçek sınava girmediysen kapsam dışısın.</li>
+          <li><strong>Sınava katılamama</strong> — geç kalma, belge eksikliği, sağlık durumu gibi sebeplerle sınava girememe.</li>
+          <li><strong>Eksik şart</strong> — beş şarttan biri bile sağlanmamışsa garanti aktifleşmez.</li>
+          <li><strong>Sahte veya değiştirilmiş belge</strong> — başvuru reddedilir.</li>
+        </ul>
       </div>
     </div>
 
-    <div class="warning">
-      ⚠️ Pass Guarantee kişi başına yalnızca 1 kez kullanılabilir. İade veya uzatmadan
-      sadece birini seçebilirsin, ikisi birden verilmez.
+    <div class="section">
+      <h2>Diğer koşullar</h2>
+      <div class="excl">
+        <ul style="list-style:none;">
+          <li style="padding-left:0;"><strong>Kişi başı bir hak.</strong> İade veya uzatmadan yalnızca biri seçilir, ikisi birden verilmez.</li>
+          <li style="padding-left:0;"><strong>Devredilemez.</strong> Garanti hakkı satılamaz veya başka hesaba aktarılamaz.</li>
+          <li style="padding-left:0;"><strong>Tek hesap.</strong> Farklı hesaplarda biriken ilerleme birleştirilmez.</li>
+          <li style="padding-left:0;"><strong>Kazanılmış hak korunur.</strong> Şartlar değişirse mevcut kullanıcıların hakları etkilenmez; satın alma tarihindeki şartlar geçerlidir.</li>
+        </ul>
+      </div>
     </div>
 
     <hr class="divider">
 
-    <!-- ENGLISH -->
-    <div class="en">
-      <span class="lang-badge">🇬🇧 English</span>
-      <h1>Pass Guarantee Terms</h1>
-      <p class="subtitle">
-        If you fail your exam, you get a refund or a free extension. The terms are below — nothing is hidden.
-      </p>
+    <!-- ══════════ ENGLISH ══════════ -->
+    <span class="lang-badge">🇬🇧 English</span>
+    <h1>Pass Guarantee Terms</h1>
+    <p class="subtitle">
+      If you complete all the requirements and still fail your exam, you get a refund or a free
+      extension. Every condition is listed below — nothing is hidden.
+    </p>
 
-      <div class="section">
-        <div class="step">
-          <div class="step-num">1</div>
+    <div class="scope-alert">
+      <span class="t">This guarantee covers the theory e-exam only</span>
+      <p>
+        The guarantee applies to the <strong>MEB driving theory e-exam</strong>.
+        <strong>The practical driving test is not covered.</strong> Our app prepares you for the
+        theory exam only; practical training and testing are handled by your driving school.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
           <p>
-            <strong>Scope:</strong> This guarantee only covers users who purchased the
-            <strong>"Sınava Kadar Full"</strong> package (149 TL / 99 TL during the launch campaign).
-            The Weekly (79 TL) and Monthly (129 TL) packages are not included.
+            <strong>Scope:</strong> Only users who purchased the
+            <strong>"Sınava Kadar Full"</strong> package are covered. Weekly and Monthly
+            packages are not included.
           </p>
         </div>
-        <div class="step">
-          <div class="step-num">2</div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <p><strong>Activation requirements:</strong> <strong>All five</strong> must be met:</p>
+          <ul class="cond-list">
+            <li>Own the <strong>Sınava Kadar Full</strong> package</li>
+            <li>Start at least <strong>14 days</strong> before your exam date</li>
+            <li>Solve at least <strong>80%</strong> of the question pool</li>
+            <li>Complete at least <strong>5 full mock exams</strong></li>
+            <li>Average <strong>70% or higher</strong> across your last 3 mock exams</li>
+          </ul>
+          <span class="note">
+            The in-app Guarantee Panel shows live progress for every requirement.
+            The guarantee activates once all of them are complete.
+          </span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
           <p>
-            <strong>Conditions:</strong> To activate the guarantee, you must complete at least
-            <strong>5 full mock exams</strong> and your last 3 mock exams must average
-            <strong>75% or higher</strong>.
-            <span class="note">The in-app Pass Guarantee screen shows all activation requirements
-            (package type, days left until your exam, question pool coverage) live with progress bars —
-            the guarantee only activates once every requirement shown there is met.</span>
+            <strong>Proof:</strong> An official result document from the real MEB theory e-exam
+            showing that you <strong>failed</strong>.
           </p>
         </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <p>
-            <strong>Proof:</strong> An official result document from the real MEB e-exam showing
-            you <strong>failed</strong>.
-          </p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <p><strong>Your choice:</strong> If you met the conditions and still failed, you choose
-            one of the following two options:</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <p><strong>Your choice:</strong> If you met every requirement and still failed,
+            you pick <strong>one</strong> of the following:</p>
           <div class="choice-box">
             <p><strong>a) Refund</strong> — the amount you paid is refunded through the channel
-              you purchased from (App Store or Google Play).</p>
-            <p><strong>b) Free extension</strong> — your Full access continues for free until
-              your next exam attempt.</p>
+              you purchased from (Google Play or App Store).</p>
+            <p><strong>b) Free extension</strong> — your Full access continues free of charge
+              until your next exam attempt.</p>
           </div>
         </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <p>
-            <strong>Deadline:</strong> You must submit your claim within <strong>30 days</strong>
-            of receiving your result document to
-            <a href="mailto:ehliyetzeka@gmail.com?subject=Pass%20Guarantee%20Claim" style="color:#0066FF;">ehliyetzeka@gmail.com</a>.
-          </p>
-        </div>
-        <div class="step">
-          <div class="step-num">6</div>
-          <p>
-            <strong>Exception:</strong> Users who meet the conditions but never sit the real exam
-            are not covered — the guarantee only applies to a real exam attempt that fails.
-          </p>
-        </div>
       </div>
 
-      <div class="section">
-        <h2>How to Claim</h2>
-        <div class="alt-method">
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
           <p>
-            Send your result document to
-            <a href="mailto:ehliyetzeka@gmail.com?subject=Pass%20Guarantee%20Claim">ehliyetzeka@gmail.com</a>
-            with subject <strong>"Pass Guarantee Claim"</strong>. Our team will review it and
-            process the option you chose.
+            <strong>Deadline:</strong> Submit your claim within <strong>30 days</strong> of the
+            date on your result document to
+            <a href="mailto:ehliyetzeka@gmail.com?subject=Pass%20Guarantee%20Claim">ehliyetzeka@gmail.com</a>,
+            stating which option you choose.
           </p>
         </div>
-      </div>
-
-      <div class="warning">
-        ⚠️ Pass Guarantee can only be used once per person. You can choose either the refund
-        or the extension, not both.
       </div>
     </div>
+
+    <div class="section">
+      <h2>Not covered</h2>
+      <div class="excl">
+        <ul>
+          <li><strong>Practical driving test</strong> — the guarantee covers the theory e-exam only.</li>
+          <li><strong>Not sitting the exam</strong> — meeting the requirements is not enough if you never take the real exam.</li>
+          <li><strong>Unable to attend</strong> — arriving late, missing documents, health issues.</li>
+          <li><strong>Incomplete requirements</strong> — if even one of the five is unmet, the guarantee does not activate.</li>
+          <li><strong>Forged or altered documents</strong> — the claim is rejected.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warning">
+      ⚠️ The Pass Guarantee can be used <strong>once per person</strong>. You may choose either
+      the refund or the extension — not both. The right is non-transferable, and progress from
+      separate accounts is not combined.
+    </div>
+
+    <p class="updated">Son güncelleme / Last updated: 19 Ağustos 2026 · Ehliyet Zeka</p>
 
   </div>
 </body>
