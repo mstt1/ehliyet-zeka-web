@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaynaklar ve Yasal Uyarı | Ehliyet Zeka</title>
+  <!--
+    F6 (23 Eyl 2026) — metin uygulamadaki Profil → "Kaynaklar ve Yasal Uyarı"
+    ekranıyla BİREBİR aynı (kaynak: ana repo lib/core/constants/legal_sources.dart).
+    Metni burada değiştirme; önce uygulamadaki sabiti değiştir, sonra buraya kopyala.
+    Stil pg_sartlari.html ile aynı.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0A0A0F;
+      --card:#14141C;
+      --line:rgba(255,255,255,.07);
+      --text:#FFFFFF;
+      --body:rgba(255,255,255,.82);
+      --muted:#8A8A9A;
+      --blue:#0066FF;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:32px 20px 64px;
+      -webkit-font-smoothing:antialiased;
+    }
+    .card{
+      background:var(--card);
+      border-radius:20px;
+      padding:36px 30px;
+      max-width:600px;
+      width:100%;
+      border:1px solid var(--line);
+    }
+    .logo{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
+    .logo-mark{width:44px;height:44px;flex-shrink:0;}
+    .logo-text{font-size:19px;font-weight:800;letter-spacing:-.02em;}
+    h1{font-size:23px;font-weight:800;letter-spacing:-.02em;margin-bottom:18px;}
+    p{font-size:14.5px;color:var(--body);line-height:1.65;}
+    h2{
+      font-size:12.5px;font-weight:700;color:var(--muted);
+      text-transform:uppercase;letter-spacing:.06em;margin:28px 0 12px;
+    }
+    .links{list-style:none;margin:10px 0 18px;}
+    .links li{
+      font-size:14px;color:var(--body);line-height:1.55;
+      padding:8px 0 8px 18px;position:relative;
+    }
+    .links li::before{
+      content:"";position:absolute;left:3px;top:16px;
+      width:6px;height:6px;border-radius:50%;background:var(--blue);
+    }
+    .links a{display:block;margin-top:3px;font-size:13px;word-break:break-all;}
+    a{color:var(--blue);text-decoration:none;font-weight:600;}
+    a:hover{text-decoration:underline;}
+    .updated{
+      margin-top:26px;padding-top:16px;border-top:1px solid var(--line);
+      font-size:12px;color:var(--muted);
+    }
+    .updated a{font-weight:600;}
+    @media (max-width:480px){
+      .card{padding:28px 20px;border-radius:16px;}
+      h1{font-size:20px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Ehliyet Zeka">
+        <rect width="100" height="100" rx="22" fill="#0A0A0F"/>
+        <path d="M28 30 L74 30 L30 70 L72 70" fill="none" stroke="#0066FF"
+              stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M68 35 L60 42 M54 47 L46 54 M40 59 L34 65" stroke="#FFFFFF"
+              stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">Ehliyet Zeka</span>
+    </div>
+
+    <h1>Kaynaklar ve Yasal Uyarı</h1>
+
+    <p>Ehliyet Zeka bağımsız bir eğitim uygulamasıdır. T.C. Millî Eğitim Bakanlığı (MEB), Emniyet Genel Müdürlüğü veya herhangi bir devlet kurumunu temsil etmez, bu kurumlarla bağlantısı yoktur ve resmî sınav hizmeti sunmaz. Sınav başvurusu, randevu ve sonuçlar için yalnızca ilgili kurumların resmî kanallarını kullanın.</p>
+
+    <h2>RESMÎ KAYNAKLAR</h2>
+
+    <p>Uygulamadaki geçmiş sınav soruları ve cevap anahtarları, MEB Ölçme, Değerlendirme ve Sınav Hizmetleri Genel Müdürlüğünün kamuya açık yayınlarından alınmıştır:</p>
+    <ul class="links">
+      <li>MTSK geçmiş sınav soru kitapçıkları ve cevap anahtarları
+        <a href="https://odsgm.meb.gov.tr" target="_blank" rel="noopener">https://odsgm.meb.gov.tr</a></li>
+      <li>MTSK e-Sınav örnek soruları
+        <a href="https://odsgm.meb.gov.tr/www/meb-motorlu-tasit-surucu-kursiyerleri-e-sinavi-sorulari-yayimlandi/icerik/1085" target="_blank" rel="noopener">https://odsgm.meb.gov.tr/www/meb-motorlu-tasit-surucu-kursiyerleri-e-sinavi-sorulari-yayimlandi/icerik/1085</a></li>
+    </ul>
+
+    <p>Trafik kuralları, işaretler ve cezalara ilişkin bilgiler şu resmî mevzuata dayanır:</p>
+    <ul class="links">
+      <li>2918 sayılı Karayolları Trafik Kanunu
+        <a href="https://mevzuat.gov.tr/MevzuatMetin/1.5.2918.pdf" target="_blank" rel="noopener">https://mevzuat.gov.tr/MevzuatMetin/1.5.2918.pdf</a></li>
+      <li>Karayolları Trafik Yönetmeliği
+        <a href="https://mevzuat.gov.tr/mevzuat?MevzuatNo=8182&amp;MevzuatTur=7&amp;MevzuatTertip=5" target="_blank" rel="noopener">https://mevzuat.gov.tr/mevzuat?MevzuatNo=8182&amp;MevzuatTur=7&amp;MevzuatTertip=5</a></li>
+      <li>EGM Trafik Başkanlığı mevzuat sayfası
+        <a href="https://www.trafik.gov.tr/trafik-mevzuat" target="_blank" rel="noopener">https://www.trafik.gov.tr/trafik-mevzuat</a></li>
+    </ul>
+
+    <p>Uygulamadaki diğer pratik sorular ve tüm açıklamalar bu kaynaklara dayanılarak uygulama ekibi tarafından hazırlanmıştır; resmî sınav sorusu değildir.</p>
+
+    <div class="updated">
+      Son güncelleme: 23 Eylül 2026 · <a href="index.html">Ana sayfa</a> · <a href="mailto:ehliyetzeka@gmail.com">ehliyetzeka@gmail.com</a>
+    </div>
+  </div>
+</body>
+</html>
