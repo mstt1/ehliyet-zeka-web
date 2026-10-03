@@ -1,0 +1,55 @@
+/* Ehliyet Zeka — auth sayfaları stili. Site (kaynaklar.html/pg_sartlari.html) koyu temalıdır;
+   burada prefers-color-scheme: light için açık tema eklendi. Renkler uygulama paletiyle aynı:
+   birincil #0066FF — açık zeminde metin/link için #0052CC (kontrast ≥ 5:1), koyu zeminde #5B9BFF. */
+:root{
+  --bg:#0A0A0F; --card:#14141C; --line:rgba(255,255,255,.09);
+  --text:#FFFFFF; --body:rgba(255,255,255,.82); --muted:#9A9AAA;
+  --blue:#0066FF; --link:#5B9BFF; --input:#0E0E15; --input-line:rgba(255,255,255,.18);
+  --ok:#2BD99F; --err-bg:rgba(255,77,106,.10); --err-line:rgba(255,77,106,.45); --err:#FF8DA0;
+  --ok-bg:rgba(43,217,159,.10); --ok-line:rgba(43,217,159,.4);
+  color-scheme:dark light;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#F8F9FA; --card:#FFFFFF; --line:rgba(10,10,15,.10);
+    --text:#0A0A0F; --body:rgba(10,10,15,.80); --muted:#5A5A6A;
+    --link:#0052CC; --input:#FFFFFF; --input-line:rgba(10,10,15,.28);
+    --ok:#007A55; --err-bg:rgba(200,30,60,.06); --err-line:rgba(200,30,60,.45); --err:#B3112F;
+    --ok-bg:rgba(0,122,85,.07); --ok-line:rgba(0,122,85,.4);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--bg);color:var(--text);min-height:100vh;
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:32px 20px 64px;-webkit-font-smoothing:antialiased;
+}
+.card{background:var(--card);border-radius:20px;padding:36px 30px;max-width:520px;width:100%;border:1px solid var(--line);}
+.logo{display:flex;align-items:center;gap:12px;margin-bottom:26px;}
+.logo-mark{width:44px;height:44px;flex-shrink:0;}
+.logo-text{font-size:19px;font-weight:800;letter-spacing:-.02em;}
+h1{font-size:23px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;}
+p{font-size:14.5px;color:var(--body);line-height:1.65;margin-bottom:18px;}
+label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:14px 0 6px;}
+input[type=password],input[type=text]{
+  width:100%;font:inherit;font-size:16px;color:var(--text);background:var(--input);
+  border:1.5px solid var(--input-line);border-radius:12px;padding:13px 14px;min-height:48px;
+}
+input:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}
+.btn{
+  display:block;width:100%;margin-top:20px;min-height:48px;padding:13px 16px;border:0;border-radius:12px;
+  background:var(--blue);color:#fff;font:inherit;font-size:16px;font-weight:700;cursor:pointer;
+}
+.btn:disabled{opacity:.6;cursor:default;}
+.linkbtn{
+  margin-top:10px;background:none;border:0;color:var(--link);font:inherit;font-size:13.5px;font-weight:600;
+  cursor:pointer;padding:10px 0;min-height:44px;
+}
+.msg{margin-top:18px;padding:13px 15px;border-radius:12px;font-size:14px;line-height:1.55;border:1px solid;}
+.msg.error{background:var(--err-bg);border-color:var(--err-line);color:var(--err);}
+.msg.done{background:var(--ok-bg);border-color:var(--ok-line);color:var(--ok);font-weight:600;}
+.foot{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);}
+.foot a{color:var(--link);font-weight:600;text-decoration:none;}
+[hidden]{display:none !important;}
+@media (max-width:480px){.card{padding:28px 20px;border-radius:16px;} h1{font-size:20px;}}
